@@ -1,0 +1,18 @@
+<div class="container my-3 text-center" *ngIf="favNote.length==0; else elseB">
+    <h2>No Favorites to show!</h2>
+  </div>
+  <ng-template #elseB>
+    <h2 class="my-3 text-center" style="font-weight:bold">Your Favorites</h2>
+    <div class="container" *ngFor="let y of favNote">
+      <div class="card m-3 mb-5 my-5 bg-dark" style="color:white">
+        <h5 class="card-header" routerLink="/noteDetails/{{y.id}}" style="border-bottom:2px solid black;">{{y.title}}</h5>
+        <div class="card-body">
+          <p class="card-text">{{y.body}}</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-light me-md-2" type="button" (click)="RemoveFav(y)">Remove</button>
+           </div>
+        </div>
+      </div>
+    </div>
+</ng-template>
+  

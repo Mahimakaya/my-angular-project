@@ -1,0 +1,16 @@
+<div class="container" *ngIf="note">
+    <h2 class="text-center">Make changes</h2>
+      <div class="mb-3">
+        <label for="title" class="form-label" style="font-weight:bold">Title</label>
+        <input type="text" style="font-weight:500;color: white;" class="form-control bg-dark" [(ngModel)]="note.title" #noteTitle>
+      </div>
+      <div class="mb-3" style="height:50vh;">
+        <label for="body" class="form-label" style="font-weight:bold">Body</label>
+        <textarea class="form-control bg-dark border-dark" style="font-weight:500;height:inherit;color: white;" [(ngModel)]="note.body" #noteBody>{{note.body}}</textarea>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto my-5">
+        <button class="btn btn-dark" (click)="Save(note,noteTitle.value,noteBody.value)" type="button">Save</button>
+        <button class="btn btn-dark" (click)="goBack()" type="button">Back</button>
+      </div>
+</div>
+    

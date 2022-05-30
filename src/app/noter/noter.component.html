@@ -1,0 +1,57 @@
+<div class="container">
+<form class="container my-3 border-dark">
+  <h2 class="text-center" style="font-weight:bold">Write Here!</h2>
+  <div class="mb-3">
+    <label for="title" class="form-label" style="font-weight:bold">Title</label>
+    <input type="text" style="font-weight:500;color: white;" class="form-control bg-dark" id="title" #noteTitle>
+  </div>
+  <div class="mb-3" style="height:50vh;">
+    <label for="body" class="form-label" style="font-weight:bold">Body</label>
+    <textarea class="form-control bg-dark" style="font-weight:500;color: white;" aria-label="With textarea" #noteBody></textarea>
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto my-5">
+    <button class="btn btn-dark" (click)="NoteDown(noteTitle.value,noteBody.value)" type="button">Note Down</button>
+  </div>
+</form>
+</div>
+
+<!--
+<div class="container" *ngIf="note.length==0; else elseBlock">
+  <h4>No Notes to show!</h4>
+</div>
+<ng-template #elseBlock>
+  <h3 style="text-align:center;">Your Notes</h3>
+  <div class="container" *ngFor="let x of note">
+    <div class="card border-dark m-5">
+      <h5 class="card-header">{{x.title}}</h5>
+      <div class="card-body">
+        <p class="card-text">{{x.body}}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-secondary me-md-2" type="button" (click)="addFav(x)">Add to Favorites</button>
+          <button class="btn btn-secondary" type="button" (click)="DeleteNote(x)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+<div class="container" *ngIf="favNote.length==0; else elseB">
+  <h4>No Favorites to show!</h4>
+</div>
+<ng-template #elseB>
+  <h3 style="text-align:center;">Your Favorites</h3>
+  <div class="container" *ngFor="let y of favNote">
+    <div class="card border-dark m-5">
+      <h5 class="card-header">{{y.title}}</h5>
+      <div class="card-body">
+        <p class="card-text">{{y.body}}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-secondary me-md-2" type="button" (click)="RemoveFav(y)">Remove</button>
+         </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+-->

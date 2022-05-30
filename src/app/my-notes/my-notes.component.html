@@ -1,0 +1,18 @@
+<div class="container my-3 text-center" *ngIf="note.length==0; else elseBlock">
+  <h2>No Notes to show!</h2>
+</div>
+<ng-template #elseBlock>
+  <h2 class="my-3 text-center" style="font-weight:bold">Your Notes</h2>
+  <div class="container" *ngFor="let x of note">
+    <div class="card border-dark bg-dark m-3 mb-5 my-5" style="color:white">
+      <h5 class="card-header" routerLink="/noteDetails/{{x.id}}" style="border-bottom:2px solid black ;">{{x.title}}</h5>
+      <div class="card-body">
+        <p class="card-text">{{x.body}}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-light me-md-2" type="button" (click)="addFav(x)">Add to Favorites</button>
+          <button class="btn btn-light" type="button" (click)="DeleteNote(x)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

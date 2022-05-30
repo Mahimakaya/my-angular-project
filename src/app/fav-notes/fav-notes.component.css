@@ -1,0 +1,6 @@
+.card-header{
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(74, 72, 72);
+}
